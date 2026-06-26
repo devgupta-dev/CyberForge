@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>Admin Panel</h1>
+
+<h3>Statistics</h3>
+
+<p>Total Users: {{ total_users }}</p>
+
+<p>Total Challenges: {{ total_challenges }}</p>
+
+<hr>
+
+<a href="/add_challenge">
+    <button>Create Challenge</button>
+</a>
+
+<hr>
+
+<h2>All Challenges</h2>
+
+{% for challenge in challenges %}
+
+<div class="challenge-card">
+
+    <h3>{{ challenge["title"] }}</h3>
+
+    <p>{{ challenge["description"] }}</p>
+
+    <p>{{ challenge["category"] }}</p>
+
+    <p>{{ challenge["difficulty"] }}</p>
+
+    <p>{{ challenge["points"] }} points</p>
+
+</div>
+
+<br>
+
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ challenge["title"] }}</h1>
+
+<p>{{ challenge["description"] }}</p>
+
+<p><b>Category:</b> {{ challenge["category"] }}</p>
+
+<p><b>Difficulty:</b> {{ challenge["difficulty"] }}</p>
+
+<p><b>Points:</b> {{ challenge["points"] }}</p>
+
+<hr>
+
+{% if solved %}
+
+<h2>Already Solved</h2>
+
+{% else %}
+
+<form method="POST">
+
+<input
+type="text"
+name="answer"
+placeholder="Enter flag">
+
+<button type="submit">
+Submit
+</button>
+
+</form>
+
+{% endif %}
+
+<p>{{ message }}</p>
+
+{% endblock %}

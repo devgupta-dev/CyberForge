@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Weak Password",
+    "description": "The administrator is using a weak password. Find the correct flag.",
+    "category": "Web",
+    "difficulty": "Easy",
+    "points": 100,
+    "flag": "flag{easy_password}"
+  },
+  {
+    "title": "Hidden Linux File",
+    "description": "A hidden file on the Linux server contains the flag.",
+    "category": "Linux",
+    "difficulty": "Easy",
+    "points": 150,
+    "flag": "flag{hidden_linux_file}"
+  },
+  {
+    "title": "Base64 Decoder",
+    "description": "Decode the provided Base64 string to obtain the flag.",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 120,
+    "flag": "flag{base64_decoded}"
+  },
+  {
+    "title": "Hidden Admin Panel",
+    "description": "Discover the hidden admin page.",
+    "category": "Web",
+    "difficulty": "Medium",
+    "points": 200,
+    "flag": "flag{hidden_admin_panel}"
+  },
+  {
+    "title": "Suspicious DNS Traffic",
+    "description": "Analyze the packet capture and identify the malicious DNS request.",
+    "category": "Forensics",
+    "difficulty": "Medium",
+    "points": 250,
+    "flag": "flag{suspicious_dns}"
+  },
+  {
+    "title": "Broken MD5 Hash",
+    "description": "Crack the MD5 hash to recover the password.",
+    "category": "Crypto",
+    "difficulty": "Easy",
+    "points": 100,
+    "flag": "flag{password}"
+  }
+]

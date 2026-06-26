@@ -1,0 +1,224 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+<div class="row mb-5">
+
+<div class="col-md-8">
+
+<h1 class="display-5 fw-bold">
+
+Welcome back,
+<span class="text-success">
+
+{{ user["username"] }}
+
+</span>
+
+👋
+
+</h1>
+
+<p class="lead">
+
+Ready to continue your cybersecurity journey?
+
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="card bg-dark border-success">
+
+<div class="card-body">
+
+<h4>Your Rank</h4>
+
+<h2 class="text-success">
+
+{{ rank }}
+
+</h2>
+
+<hr>
+
+<h5>
+
+XP
+
+</h5>
+
+<h3>
+
+{{ user["score"] }}
+
+</h3>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-lg-8">
+
+<h2 class="mb-4">
+
+Today's Mission
+
+</h2>
+
+<div class="card bg-dark border-success">
+
+<div class="card-body">
+
+<h3>
+
+🐧 Secure an Ubuntu Server
+
+</h3>
+
+<p>
+
+Remove unauthorized users, secure SSH,
+configure firewall rules,
+and harden the operating system.
+
+</p>
+
+<span class="badge bg-success">
+
+100 XP
+
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<h2 class="mb-4">
+
+Academies
+
+</h2>
+
+<div class="list-group">
+
+<a class="list-group-item list-group-item-dark">
+
+🐧 Linux Academy
+
+</a>
+
+<a class="list-group-item list-group-item-dark">
+
+🪟 Windows Academy
+
+</a>
+
+<a class="list-group-item list-group-item-dark">
+
+🌐 Networking Academy
+
+</a>
+
+<a class="list-group-item list-group-item-dark">
+
+🔍 Digital Forensics
+
+</a>
+
+<a class="list-group-item list-group-item-dark">
+
+🏆 CyberPatriot
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<h2 class="mb-4">
+
+Available Challenges
+
+</h2>
+
+<div class="row">
+
+{% for challenge in challenges %}
+
+<div class="col-lg-4 mb-4">
+
+<div class="card bg-dark border-secondary h-100">
+
+<div class="card-body">
+
+<h4>
+
+{{ challenge["title"] }}
+
+</h4>
+
+<p>
+
+{{ challenge["description"] }}
+
+</p>
+
+<span class="badge bg-primary">
+
+{{ challenge["category"] }}
+
+</span>
+
+<span class="badge bg-warning text-dark">
+
+{{ challenge["difficulty"] }}
+
+</span>
+
+<span class="badge bg-success">
+
+{{ challenge["points"] }} XP
+
+</span>
+
+<br><br>
+
+<a
+href="/challenge/{{ challenge['id'] }}"
+class="btn btn-success">
+
+Open Challenge
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endblock %}
