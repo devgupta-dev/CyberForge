@@ -2,42 +2,116 @@
 
 {% block content %}
 
-<h1>Admin Panel</h1>
+<h1 class="mb-4">
+🛡️ CyberForge Admin
+</h1>
 
-<h3>Statistics</h3>
+<div class="row">
 
-<p>Total Users: {{ total_users }}</p>
+<div class="col-md-6">
 
-<p>Total Challenges: {{ total_challenges }}</p>
+<div class="card bg-dark border-success">
 
-<hr>
+<div class="card-body">
 
-<a href="/add_challenge">
-    <button>Create Challenge</button>
-</a>
+<h1 class="display-3 text-success">
 
-<hr>
+{{ total_users }}
 
-<h2>All Challenges</h2>
+</h1>
 
-{% for challenge in challenges %}
+<h5>
 
-<div class="challenge-card">
+Total Users
 
-    <h3>{{ challenge["title"] }}</h3>
-
-    <p>{{ challenge["description"] }}</p>
-
-    <p>{{ challenge["category"] }}</p>
-
-    <p>{{ challenge["difficulty"] }}</p>
-
-    <p>{{ challenge["points"] }} points</p>
+</h5>
 
 </div>
 
-<br>
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="card bg-dark border-success">
+
+<div class="card-body">
+
+<h1 class="display-3 text-success">
+
+{{ total_challenges }}
+
+</h1>
+
+<h5>
+
+Total Challenges
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<hr class="my-5">
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+
+<h2>
+
+Challenges
+
+</h2>
+
+<a href="/admin/add"
+
+class="btn btn-success">
+
+➕ Create Challenge
+
+</a>
+
+</div>
+
+<table class="table table-dark table-striped">
+
+<tr>
+
+<th>ID</th>
+
+<th>Title</th>
+
+<th>Category</th>
+
+<th>Difficulty</th>
+
+<th>XP</th>
+
+</tr>
+
+{% for challenge in challenges %}
+
+<tr>
+
+<td>{{ challenge["id"] }}</td>
+
+<td>{{ challenge["title"] }}</td>
+
+<td>{{ challenge["category"] }}</td>
+
+<td>{{ challenge["difficulty"] }}</td>
+
+<td>{{ challenge["points"] }}</td>
+
+</tr>
 
 {% endfor %}
+
+</table>
 
 {% endblock %}

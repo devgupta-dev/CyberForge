@@ -2,62 +2,108 @@
 
 {% block content %}
 
-<h1>Create Challenge</h1>
+<h1 class="mb-4">
 
-<form method="POST">
+➕ Create Challenge
 
-    <input
-        type="text"
-        name="title"
-        placeholder="Challenge Title"
-        required>
+</h1>
 
-    <br><br>
+<div class="card bg-dark border-success">
 
-    <input
-        type="text"
-        name="description"
-        placeholder="Description"
-        required>
+<div class="card-body">
 
-    <br><br>
+<form>
 
-    <input
-        type="text"
-        name="category"
-        placeholder="Category"
-        required>
+<div class="mb-3">
 
-    <br><br>
+<label>Title</label>
 
-    <input
-        type="text"
-        name="difficulty"
-        placeholder="Difficulty"
-        required>
+<input
+class="form-control"
+placeholder="Challenge Title">
 
-    <br><br>
+</div>
 
-    <input
-        type="number"
-        name="points"
-        placeholder="Points"
-        required>
+<div class="mb-3">
 
-    <br><br>
+<label>Description</label>
 
-    <input
-        type="text"
-        name="flag"
-        placeholder="Flag"
-        required>
+<textarea
+class="form-control"
+rows="5"
+placeholder="Challenge Description"></textarea>
 
-    <br><br>
+</div>
 
-    <button type="submit">
-        Create Challenge
-    </button>
+<div class="mb-3">
+
+<label>Category</label>
+
+<select class="form-select">
+
+<option>Web</option>
+
+<option>Linux</option>
+
+<option>Windows</option>
+
+<option>Networking</option>
+
+<option>Crypto</option>
+
+<option>Forensics</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Difficulty</label>
+
+<select class="form-select">
+
+<option>Easy</option>
+
+<option>Medium</option>
+
+<option>Hard</option>
+
+</select>
+
+</div>
+
+<div class="mb-3">
+
+<label>Points</label>
+
+<input
+class="form-control"
+type="number">
+
+</div>
+
+<div class="mb-3">
+
+<label>Flag</label>
+
+<input
+class="form-control"
+placeholder="flag{example}">
+
+</div>
+
+<button
+class="btn btn-success">
+
+Create Challenge
+
+</button>
 
 </form>
+
+</div>
+
+</div>
 
 {% endblock %}

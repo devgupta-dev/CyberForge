@@ -347,8 +347,56 @@ def challenge(challenge_id):
         solved=solved
     )
 
+# ---------------- ADMIN ----------------
 
-# ---------------- LEADERBOARD ----------------
+ADMIN_USERNAME = "DevGupta"
+
+@app.route("/admin")
+def admin():
+
+    if "user" not in session:
+        return redirect("/login")
+
+    if session["user"] != ADMIN_USERNAME:
+        return "Access Denied"
+
+    conn = get_db()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT COUNT(*) FROM users")
+    total_users = cursor.fetchone()[0]
+
+    cursor.execute("SELECT COUNT(*) FROM challenges")
+    total_challenges = cursor.fetchone()[0]
+
+    cursor.execute("""
+        SELECT *
+        FROM challenges
+        ORDER BY id DESC
+    """)
+
+    challenges = cursor.fetchall()
+
+    conn.close()
+
+    return render_template(
+        "admin.html",
+        total_users=total_users,
+        total_challenges=total_challenges,
+        challenges=challenges
+    )
+@app.route("/admin/add")
+def add_challenge():
+
+    if "user" not in session:
+        return redirect("/login")
+
+    if session["user"] != ADMIN_USERNAME:
+        return "Access Denied"
+
+    return render_template("add_challenge.html")
+    
+    # ---------------- LEADERBOARD ----------------
 
 @app.route("/leaderboard")
 def leaderboard():
